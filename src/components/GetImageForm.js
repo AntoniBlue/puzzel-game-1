@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { ImageContext } from './Context/ImageContext';
-
+import styles from "./GetImageForm.module.css"
 
 export const GetImageForm = () => {
     const { image, setImage } = useContext(ImageContext)
@@ -12,16 +12,18 @@ export const GetImageForm = () => {
     }
 
     return (
-        <div>
+        <div className={styles.container}>
             <form onSubmit={submitHandle}>
-                <label>
-                    Image:
+                <label className={styles.label}>
+                    ImageURL:
                     <input
+                        type='url'
+                        className={styles.input}
                         value={text}
                         onChange={(e) => setText(e.target.value)}
                     />
                 </label>
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit" className={styles.submit} />
             </form>
         </div>
     )

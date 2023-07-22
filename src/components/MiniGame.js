@@ -2,16 +2,19 @@ import { useContext, useState } from "react"
 import { PuzzelPeaces } from "./PuzzelPeaces"
 import { ImageContext } from "./Context/ImageContext"
 import styles from "./MiniGame.module.css";
+import { IdSwapContext } from "./Context/IdSwapContext";
 
 const MiniGame = () => {
     const { image, setImage } = useContext(ImageContext)
-    const [rows, setRows] = useState(3)
+    const { idSwap, setIdSwap } = useContext(IdSwapContext)
+
+    const [rows, setRows] = useState(0)
     const [imageIds, setimageIds] = useState([])
 
     const changeHandler = (e) => {
         let row = (e.target.value)
         setRows(row)
-        let ids=[]
+        let ids = []
         for (let i = 0; i < row * row; i++) {
             if (Math.random() < Number(0.5)) {
                 ids.push(i)
@@ -22,26 +25,32 @@ const MiniGame = () => {
         setimageIds(ids)
     }
 
+    if (idSwap.length == 2) {
 
+        let indeOne = (imageIds.indexOf(Number(idSwap[0])));
+        let indeTwo = (imageIds.indexOf(Number(idSwap[1])));
+
+        imageIds.splice(indeOne, 1, Number(idSwap[1]))
+        imageIds.splice(indeTwo, 1, Number(idSwap[0]))
+
+        idSwap.splice(0, 2)
+    }
 
     return (
-        <div>
-            <div className={styles.MiniGameWindow} id="MiniGame" >Puzzel
-                <form >
-                    <label >Rows ({rows}):</label>
-                    <input
-                        type="range"
-                        min="2"
-                        max="20"
-                        value={rows}
-                        onChange={(e) =>
-                            changeHandler(e)
-                        }
-                    />
-                    <img src={image}/>
-                </form>
-                <div className={styles.GameWindow}> {imageIds.map(x => <PuzzelPeaces rows={rows} key={x} PuzzelId={x} imgUrl={image} />)} </div>
-            </div>
+        <div className={styles.MiniGameWindow} id="MiniGame" >
+            <form className={styles.form}>
+                <label >Rows({rows}):</label>
+                <input
+                    type="range"
+                    min="2"
+                    max="20"
+                    value={rows}
+                    onChange={(e) =>
+                        changeHandler(e)
+                    }
+                />
+            </form>
+            <div className={styles.GameWindow}> {imageIds.map(x => <PuzzelPeaces rows={rows} key={x} PuzzelId={x} imgUrl={image} />)} </div>
         </div>
     )
 }

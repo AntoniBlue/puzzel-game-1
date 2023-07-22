@@ -1,12 +1,11 @@
+import styles from "./Navigation.module.css"
 
 const Navigation = () => {
 
     return (
-        <div>
-            <div>
-                <a href="HomePage">HomePage</a>
-                <a href="MiniGame">MiniGame</a>
-            </div>
+        <div className={styles.container}>
+            <a className={styles.buttons} href="#HomePage">HomePage</a>
+            <a className={styles.buttons} href="#MiniGame">MiniGame</a>
         </div>
     )
 }
