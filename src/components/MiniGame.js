@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import { PuzzelPeaces } from "./PuzzelPeaces"
+import { PuzzlePeaces } from "./PuzzlePeaces"
 import { ImageContext } from "./Context/ImageContext"
 import styles from "./MiniGame.module.css";
 import { IdSwapContext } from "./Context/IdSwapContext";
@@ -50,7 +50,7 @@ const MiniGame = () => {
                     }
                 />
             </form>
-            <div className={styles.GameWindow}> {imageIds.map(x => <PuzzelPeaces rows={rows} key={x} PuzzelId={x} imgUrl={image} />)} </div>
+            <div className={styles.GameWindow}> {imageIds.map(x => <PuzzlePeaces rows={rows} key={x} PuzzleId={x} imgUrl={image} />)} </div>
         </div>
     )
 }

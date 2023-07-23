@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
-import styles from "./PuzzelPeaces.module.css";
+import styles from "./PuzzlePeaces.module.css";
 import { IdSwapContext } from "./Context/IdSwapContext";
 
-export const PuzzelPeaces = (props) => {
+export const PuzzlePeaces = (props) => {
     const { idSwap, setIdSwap } = useContext(IdSwapContext)
-    const [id, setId] = useState(props.PuzzelId)
+    const [id, setId] = useState(props.PuzzleId)
 
     const PeaceFrame = {
         height: 600 / props.rows,
@@ -23,8 +23,8 @@ export const PuzzelPeaces = (props) => {
     }
 
     return (
-        <div className={styles.PuzzelPeaceStyle} style={PeaceFrame} >
-            <img src={props.imgUrl} alt={id} id={id} className={styles.PuzzelPeaceImageStyle} style={PeaceStyle} onClick={imageHandler} />
+        <div className={styles.PuzzlePeaceStyle} style={PeaceFrame} >
+            <img src={props.imgUrl} alt={id} id={id} className={styles.PuzzlePeaceImageStyle} style={PeaceStyle} onClick={imageHandler} />
         </div>
     )
 }
