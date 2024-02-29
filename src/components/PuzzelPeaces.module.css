@@ -1,8 +1,16 @@
 .PuzzelPeaceStyle {
     display: flex;
     overflow: hidden;
+<<<<<<< HEAD
 }
 
 .PuzzelPeaceStyle:hover {
     /* overflow: visible; */
 } 
+=======
+    object-fit: cover;
+}
+
+.PuzzelPeaceImageStyle {
+}
+>>>>>>> parent of 8a8a59a (Renamed)

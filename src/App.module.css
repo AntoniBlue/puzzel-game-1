@@ -1,0 +1,65 @@
+.App {
+    text-align: center;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+}
+
+.header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+.background {
+    transform: translateZ(-10px) scale(2);
+}
+
+.foreground {
+    transform: translateZ(-5px) scale(1.5);
+}
+
+.title{
+    transform: translateZ(-2px) scale(12.8);
+    position: absolute;
+    z-index: 5;
+}
+.title2{
+    transform: translateZ(-2.2px) scale(13.2);
+    position: absolute;
+    color: rgb(210, 210, 210);
+    z-index: 4;
+}
+
+.title3{
+    transform: translateZ(-2.4px) scale(13.6);
+    position: absolute;
+    color: rgb(190, 190, 190);
+    z-index: 3;
+}
+.title4{
+    transform: translateZ(-2.6px) scale(14);
+    position: absolute;
+    color: rgb(170, 170, 170);
+    z-index: 2;
+}
+.title5{
+    transform: translateZ(-2.8px) scale(14.4);
+    position: absolute;
+    color: rgb(150, 150, 150);
+    z-index: 1;
+}
+
+.background,
+.foreground {
+    position: absolute;
+    height: 100%;
+    width: 110%;
+    object-fit: fill;
+    z-index: -1;
+}
