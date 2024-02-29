@@ -1,0 +1,8 @@
+.PuzzlePeaceStyle {
+    display: flex;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.PuzzlePeaceImageStyle {
+}
