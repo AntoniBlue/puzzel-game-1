@@ -1,0 +1,8 @@
+.PuzzelPeaceStyle {
+    display: flex;
+    overflow: hidden;
+}
+
+.PuzzelPeaceStyle:hover {
+    /* overflow: visible; */
+} 
